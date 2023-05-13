@@ -6,8 +6,8 @@ const sequelize = new Sequelize(
 
 const db = {
     Restaurant: require("./restaurant")(sequelize, Sequelize),
-    RestaurantGroup: require("./restaurantGroup")(sequelize, Sequelize)
-
+    RestaurantGroup: require("./restaurantGroup")(sequelize, Sequelize),
+    User: require("./user")(sequelize, Sequelize)
 };
 
 Object.keys(db).forEach(key => {
