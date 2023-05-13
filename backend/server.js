@@ -43,7 +43,7 @@ server.applyMiddleware({ app, path: "/graphql" });
  * typically migrations rather than sync() would be used to modify the DB schema, especially for production. That is because
  * they are safer and offer more fine-grained controls. However, for simplicity, we won't use migrations for bootcamp
  */
-const eraseDatabaseOnSync = true;
+const eraseDatabaseOnSync = false;
 
 /* sequelize (the variable) is an abstraction over our database connection */
 sequelize.sync({ force: eraseDatabaseOnSync }).then(async () => {
