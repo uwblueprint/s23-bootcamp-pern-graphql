@@ -18,7 +18,7 @@ import { ApolloServer } from "apollo-server-express";
 
 import schema from "./graphql";
 import db, { sequelize } from "./models/index";
-import seedRestaurantData from "./seedRestaurantData";
+import {seedRestaurantData, seedRestaurantGroupData} from "./seedRestaurantData";
 
 
 /* create our Express.js application */
@@ -60,6 +60,10 @@ sequelize.sync({ force: eraseDatabaseOnSync }).then(async () => {
 async function seedDb() {
     seedRestaurantData.forEach(async (r) => {
         await db.Restaurant.create(r);
+    });
+
+    seedRestaurantGroupData.forEach(async (r) => {
+        await db.RestaurantGroup.create(r);
     });
 
     console.info("Successfully seeded the database!");

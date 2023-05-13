@@ -6,6 +6,7 @@ const sequelize = new Sequelize(
 
 const db = {
     Restaurant: require("./restaurant")(sequelize, Sequelize),
+    RestaurantGroup: require("./restaurantGroup")(sequelize, Sequelize),
     User: require("./user")(sequelize, Sequelize)
 };
 
