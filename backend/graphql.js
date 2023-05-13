@@ -11,6 +11,8 @@ import { merge } from "lodash";
 
 import restaurantType from "./types/restaurantType";
 import restaurantResolvers from "./resolvers/restaurantResolvers";
+import userType from "./types/userType";
+import userResolvers from "./resolvers/userResolvers";
 
 /**
  * base Query type definition, other queries extend this
@@ -43,10 +45,12 @@ const executableSchema = makeExecutableSchema({
     typeDefs: [
       query,
       mutation,
-      restaurantType
+      restaurantType,
+      userType,
     ],
     resolvers: merge(
-        restaurantResolvers
+        restaurantResolvers,
+        userResolvers
     )
 });
 
