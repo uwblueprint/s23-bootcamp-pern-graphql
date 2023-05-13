@@ -5,7 +5,7 @@ async function getUser(id) {
 }
 
 async function getUsers() {
-  return await db.Restaurant.findAll();
+  return await db.User.findAll();
 }
 
 async function createUser(email, password, role) {
